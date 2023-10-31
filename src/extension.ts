@@ -16,9 +16,6 @@ interface Keyword {
 	selection?: SelectionArray | FileData;
 };
 
-const debugLog = vscode.window.createOutputChannel("CFG config extension");
-debugLog.show();
-
 const keywords: Record<string, Keyword> = sample;
 
 const files: Record<string, any> = { weapons };
