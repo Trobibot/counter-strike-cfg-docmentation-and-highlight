@@ -51,18 +51,15 @@ export function activate(context: vscode.ExtensionContext) {
 
 			const comand = keywords[word];
 
-			const markdown = new vscode.MarkdownString(`
-				### 🕹️ ${word}
-				*${comand.doc}*
-
-				---
-				<br>
-				<br>
-
-				|Default|Flags|
-				|-|-|
-				|${comand.default}|${comand.flags}|
-			`);
+			const markdown = new vscode.MarkdownString();
+			markdown
+				.appendMarkdown(`### 🕹️ ${word}\n`)
+				.appendMarkdown(`*${comand.doc}*\n\n`)
+				.appendMarkdown(`---\n`)
+				.appendMarkdown('<br><br>\n')
+				.appendMarkdown(`|Default|Flags|\n`)
+				.appendMarkdown(`|-|-|\n`)
+				.appendMarkdown(`|${comand.default}|${comand.flags}|\n`);
 
 			return new vscode.Hover(markdown);
 		}
