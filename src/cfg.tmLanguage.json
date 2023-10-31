@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Configuration file",
+	"patterns": [
+		{ "include": "#keywords" },
+		{ "include": "#comments" }
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "support.function",
+					"match": "(?<=^\\s?)([a-z0-9_]+)(?=\\s|$)"
+				},
+				{
+					"name": "support.class",
+					"match": "(?<=\\s+)(weapon_[a-z0-9_]+)(?=\\s?|$)"
+				},
+				{
+					"name": "storage.int",
+					"match": "(?<=\\s+)(-?\\d+(?:\\.\\d+)?)(?!\\.)(?=\\s|$)"
+				},
+				{
+					"name": "storage.bool",
+					"match": "(?<=\\s+)(true|false)(?=\\s?|$)"
+				},
+				{
+					"name": "string.quoted.single",
+					"match": "(?<=\\s+)((?:[a-z_]+)|(?:[\"'].*?[\"']))(?=\\s?|$)"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash",
+					"match": "//(.*)$"
+				},
+				{
+					"name": "comment.line.number-sign",
+					"match": "#(.*)$"
+				}
+			]
+		}
+	},
+	"scopeName": "text.source.cfg"
+}

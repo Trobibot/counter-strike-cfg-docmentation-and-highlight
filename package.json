@@ -1,0 +1,52 @@
+{
+	"name": "counter-strike-cfg-docmentation-and-highlight",
+	"displayName": "Counter Strike CFG Docmentation and syntax highlighting",
+	"description": "Syntax highlighting and proper documentation for counter strike .cfg server's files",
+	"version": "0.3.1",
+	"repository": {},
+	"engines": {
+		"vscode": "^1.73.0"
+	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./out/extension.js",
+	"scripts": {
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./",
+		"lint": "eslint \"src/**/*.ts\""
+	},
+	"devDependencies": {
+		"@types/node": "^16.18.34",
+		"@types/vscode": "^1.73.0",
+		"@typescript-eslint/eslint-plugin": "^6.7.0",
+		"@typescript-eslint/parser": "^6.7.0",
+		"esbuild": "^0.19.4",
+		"eslint": "^8.26.0",
+		"typescript": "^5.2.2"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "cfg",
+				"aliases": [
+					"Configuration file",
+					"cfg"
+				],
+				"extensions": [
+					".cfg"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "cfg",
+				"scopeName": "text.source.cfg",
+				"path": "./src/cfg.tmLanguage.json"
+			}
+		]
+	}
+}
