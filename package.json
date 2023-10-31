@@ -1,6 +1,6 @@
 {
 	"name": "counter-strike-cfg-docmentation-and-highlight",
-	"displayName": "Counter Strike CFG Docmentation and syntax highlighting",
+	"displayName": "Counter Strike CFG intellisense",
 	"description": "Syntax highlighting and proper documentation for counter strike .cfg server's files",
 	"version": "0.3.1",
 	"repository": {},
