@@ -3,8 +3,24 @@
 	"displayName": "Counter Strike CFG intellisense",
 	"description": "Syntax highlighting and proper documentation for counter strike .cfg server's files",
 	"publisher": "trobibot",
-	"version": "0.3.1",
-	"repository": {},
+	"version": "0.3.2",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Trobibot/counter-strike-cfg-docmentation-and-highlight"
+    },
+    "enableTelemetry": false,
+    "keywords": [
+        "counter",
+        "strike",
+        "cs",
+        "csgo",
+        "cs2",
+        "cfg"
+    ],
+    "categories": [
+        "Linters",
+        "Other"
+    ],
 	"engines": {
 		"vscode": "^1.73.0"
 	},
